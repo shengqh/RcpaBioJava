@@ -50,11 +50,6 @@
 				<include name="${ant.project.name}.jar"/>
 			</fileset>
 		</copy>
-		<copy todir="../labmis/lib">
-			<fileset dir="${dist.dir}">
-				<include name="${ant.project.name}.jar"/>
-			</fileset>
-		</copy>
 		<copy todir="../glycanview/lib">
 			<fileset dir="${dist.dir}">
 				<include name="${ant.project.name}.jar"/>
@@ -65,11 +60,6 @@
 				<include name="${ant.project.name}.jar"/>
 			</fileset>
 		</copy>
-    <copy todir="D:/Tools/census_1_57/lib">
-      <fileset dir="${dist.dir}">
-        <include name="${ant.project.name}.jar"/>
-      </fileset>
-    </copy>
 	</target>
 
 </project>
