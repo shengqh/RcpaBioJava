@@ -51,6 +51,5 @@
 	<classpathentry kind="lib" path="lib/hibernate-annotations.jar"/>
 	<classpathentry kind="lib" path="lib/hibernate-tools.jar"/>
 	<classpathentry kind="lib" path="lib/hibernate-commons-annotations.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/pIcalculator"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
