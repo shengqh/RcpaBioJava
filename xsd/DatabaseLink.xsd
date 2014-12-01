@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by dreamtiger (rcpa) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="DatabaseLinkSet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DatabaseLink" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="shortlabel" type="xs:string"/>
+							<xs:element name="term" type="xs:string"/>
+							<xs:element name="search_url" type="xs:string"/>
+							<xs:element name="search_url_ascii" type="xs:string" minOccurs="0"/>
+							<xs:element name="url" type="xs:string" maxOccurs="unbounded"/>
+							<xs:element name="definition" type="xs:string" minOccurs="0"/>
+							<xs:element name="example" type="xs:string" minOccurs="0"/>
+							<xs:element name="remark" type="xs:string" minOccurs="0"/>
+							<xs:element name="comment" type="xs:string" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

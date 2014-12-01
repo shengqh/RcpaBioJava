@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+	<class name="cn.ac.rcpa.bio.database.gene.Gene2unigene" table="GENE2UNIGENE"
+		lazy="false">
+		<id name="id" type="java.lang.Long" column="ID">
+			<generator class="native"/>
+		</id>
+		
+		<property name="gene" type="java.lang.Integer" column="GENE" length="10"
+			index="gu_gene_index"/>
+		<property name="unigene" type="java.lang.String" column="UNIGENE"
+			length="10" index="gu_unigene_index"/>
+	</class>
+</hibernate-mapping>

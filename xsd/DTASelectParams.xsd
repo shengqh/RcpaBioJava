@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by dreamtiger (rcpa) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="DTASelectParams">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sequestResultFile" type="xs:string"/>
+				<xs:element name="database" type="xs:string"/>
+				<xs:element name="directory" type="xs:string"/>
+				<xs:element name="xcorrCharge1" type="xs:double" default="1.9"/>
+				<xs:element name="xcorrCharge2" type="xs:double" default="2.2"/>
+				<xs:element name="xcorrCharge3" type="xs:double" default="3.75"/>
+				<xs:element name="deltacn" type="xs:double" default="0.1"/>
+				<xs:element name="maxSpRank" type="xs:integer" default="1000"/>
+				<xs:element name="minSpScore" type="xs:double" default="-1.0"/>
+				<xs:element name="minUniquePeptideCount" type="xs:integer" default="1"/>
+				<xs:element name="minPeptideCount" type="xs:integer" default="1"/>
+				<xs:element name="purgeDuplicatePeptide">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="false"/>
+							<xs:enumeration value="XCorr"/>
+							<xs:enumeration value="Intensity"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="removeSubsetProteins" type="xs:boolean" default="true"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

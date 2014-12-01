@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.cglib.use_reflection_optimizer">
+			true
+		</property>
+
+		<property name="hibernate.hbm2ddl.auto">
+			update
+		</property>
+		<property name="hibernate.show_sql">False</property>
+		<property name="hibernate.use_outer_join">False</property>
+
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.SAPDBDialect
+		</property>
+		<property name="hibernate.connection.driver_class">
+			com.sap.dbtech.jdbc.DriverSapDB
+		</property>
+		<property name="hibernate.connection.url">
+			jdbc:sapdb://192.168.88.201/RCPA
+		</property>
+		<property name="hibernate.connection.username">annotation</property>
+		<property name="hibernate.connection.password">annotation</property>
+
+		<mapping resource="cn/ac/rcpa/bio/database/gene/Gene2go.hbm.xml" />
+		<mapping resource="cn/ac/rcpa/bio/database/gene/Gene2unigene.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

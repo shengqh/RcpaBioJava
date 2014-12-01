@@ -1,0 +1,136 @@
+CHARGE=2+ and 3+
+###	
+###	C:\HPCHEM\1\DATA\XG\BSA\20050318BSAI03.d\Analysis.yep(20050318BSAI03.d)
+###    bsa
+###    PeakWidth 0.10, MiniumIntensity 100, S/N 0
+###    	Retain Residuals no, Create neutrally.. no,
+###    FullScan Parameters: AdductIon (+)+H (-)-H, LowMass 250, HighMass 4000, MaxCharge charge decon 4, MinPeaks 3
+###    Perf. isotope decon yes, Max Charge Istopic decon 3, MW agreement 5.00, Abund. cutoff 10.00, Envelope cutoff 75.00
+###    MaxRes   Parameters: AdductIon (+)+H (-)-H, LowMass 100, HighMass 3000 
+###    Perf. isotope decon yes, Max Charge Istopic decon 3, Abund. cutoff 2.00
+###    MSn		Parameters: AdductIon (+)+H (-)-H, LowMass 50, HighMass 2000 
+###    Perf. isotope decon yes, Max Charge Istopic decon 2, Abund. cutoff 2.00
+###    Global Charge Limit: yes 3, Prefer FullScan Result: yes, Export what: 2 (0=non deconv/1=deconv only/2=mixed), NoMSMSSignals: 50, NoMSSignals 3, NormalizeData no
+###FS:    #m/z:   896.07 #charge-999
+###MaxRes:#m/z:     0.00 #charge-999
+###MS: #569
+###MSMS: #570
+###FILENAME: BSA1hh
+BEGIN IONS
+TITLE= Cmpd 1, +MSn(896.19) 22.7 min
+PEPMASS=896.071	71238
+
+297.392	729	
+405.539	999	
+457.656	544	
+462.623	917	
+519.547	721	
+529.399	616	
+530.478	864	
+540.435	727	
+547.556	2186	
+548.586	882	
+576.543	1966	
+577.699	1782	
+578.799	756	
+695.163	982	
+718.478	561	
+720.310	572	
+738.505	628	
+740.635	872	
+778.449	705	
+787.572	906	
+796.601	1878	
+797.423	1058	
+839.123	558	
+854.650	676	
+875.450	1755	
+878.120	1340	
+878.972	2625	
+887.485	8214	
+894.030	3432	
+895.829	304453	
+899.688	1161	
+911.480	800	
+937.600	629	
+956.320	641	
+962.431	658	
+1000.690	660	
+1047.896	633	
+1054.544	597	
+1079.506	782	
+1112.570	665	
+1168.657	670	
+1169.550	560	
+1197.586	855	
+1198.570	644	
+1225.628	2984	
+1226.637	1760	
+1228.589	819	
+1292.644	753	
+1389.648	915	
+1472.523	643	
+
+END IONS
+
+###FS:    #m/z:   619.73 #charge-999
+###MaxRes:#m/z:     0.00 #charge-999
+###MS: #1810
+###MSMS: #1811-1812
+BEGIN IONS
+TITLE= MYTEST, Cmpd 281, +MSn(619.63) 68.5 min
+PEPMASS=619.727	61753
+
+259.470	187	
+274.553	137	
+357.553	163	
+388.706	348	
+395.549	122	
+489.461	120	
+503.618	259	
+507.359	383	
+546.058	305	
+559.588	163	
+577.410	272	
+597.279	988	
+598.400	127	
+603.589	163	
+607.871	185	
+610.124	2042	
+610.752	2107	
+616.969	1375	
+619.330	254540	
+622.469	234	
+623.251	506	
+624.172	213	
+625.456	136	
+635.038	227	
+644.122	194	
+692.481	155	
+706.640	335	
+719.880	230	
+734.533	343	
+747.045	358	
+768.839	251	
+786.452	667	
+795.433	1180	
+797.063	115	
+800.603	211	
+821.236	189	
+845.641	190	
+846.637	196	
+848.434	128	
+865.637	647	
+866.582	233	
+867.447	168	
+942.795	112	
+959.606	630	
+961.763	300	
+978.490	224	
+979.643	448	
+980.693	267	
+1073.838	331	
+1092.637	115	
+
+END IONS
+

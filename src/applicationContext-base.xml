@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+	"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="basePoolDataSource" abstract="true"
+		class="org.logicalcobwebs.proxool.ProxoolDataSource"
+		destroy-method="close">
+		<property name="minimumConnectionCount" value="1"/>
+		<property name="maximumConnectionCount" value="100"/>
+		<property name="houseKeepingSleepTime" value="30000"/>
+		
+		<property name="alias" value="replacedByActualDBPoolName"/>
+		<property name="driver" value="replacedByActualDriverClass"/>
+		<property name="driverUrl" value="replacedByActualUrl"/>
+		<property name="user" value="replacedByActualUsername"/>
+		<property name="password" value="replacedByActualPassword"/>
+	</bean>
+
+	<bean id="baseHsqlSessionFactory" abstract="true"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.cglib.use_reflection_optimizer"> true </prop>
+				<prop key="hibernate.dialect"> org.hibernate.dialect.HSQLDialect
+					</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">True</prop>
+				<prop key="hibernate.use_outer_join">True</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="baseMysqlSessionFactory" abstract="true"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.cglib.use_reflection_optimizer"> true </prop>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLInnoDBDialect </prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">True</prop>
+				<prop key="hibernate.use_outer_join">True</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="baseSapdbSessionFactory" abstract="true"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.cglib.use_reflection_optimizer"> true </prop>
+				<prop key="hibernate.dialect"> org.hibernate.dialect.SAPDBDialect
+					</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">True</prop>
+				<prop key="hibernate.use_outer_join">True</prop>
+			</props>
+		</property>
+	</bean>
+	
+</beans>

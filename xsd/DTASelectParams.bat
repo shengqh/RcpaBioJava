@@ -1,0 +1,1 @@
+java -cp .;..\lib\xercesImpl.jar;..\lib\xmlParserAPIs.jar;..\lib\castor-xml.jar;..\lib\commons-logging.jar; org.exolab.castor.builder.SourceGenerator -types j2 -i DTASelectParams.xsd -package cn.ac.rcpa.bio.proteomics.results.dtaselect -dest .\src

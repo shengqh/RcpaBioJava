@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+	"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="annotationSessionFactory" parent="baseAnnotationSessionFactory">
+		<property name="dataSource">
+			<ref bean="annotationDataSource"/>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>cn/ac/rcpa/bio/database/gene/Gene2go.hbm.xml </value>
+				<value>cn/ac/rcpa/bio/database/gene/Gene2unigene.hbm.xml </value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="annotationTransactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="annotationSessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="annotationBaseTransactionProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true">
+		<property name="transactionManager" ref="annotationTransactionManager"/>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="Gene2unigeneDao" parent="annotationBaseTransactionProxy">
+		<property name="target">
+			<bean class="cn.ac.rcpa.bio.database.gene.impl.Gene2unigeneDaoImpl">
+				<property name="sessionFactory">
+					<ref bean="annotationSessionFactory"/>
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="Gene2goDao" parent="annotationBaseTransactionProxy">
+		<property name="target">
+			<bean class="cn.ac.rcpa.bio.database.gene.impl.Gene2goDaoImpl">
+				<property name="sessionFactory">
+					<ref bean="annotationSessionFactory"/>
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,2 @@
+del /Q src\cn\ac\rcpa\bio\database\link
+java -cp .;..\lib\xercesImpl.jar;..\lib\xmlParserAPIs.jar;..\lib\castor-xml.jar;..\lib\commons-logging.jar; org.exolab.castor.builder.SourceGenerator -types j2 -i DatabaseLink.xsd -package cn.ac.rcpa.bio.database.link -dest .\src

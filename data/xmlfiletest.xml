@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+<Root>
+  <testValues>
+    <testValue>test1</testValue>
+    <testValue>test2</testValue>
+    <testValue>test3</testValue>
+  </testValues>
+  <testValue>test1</testValue>
+  <testValue>test2</testValue>
+  <testValue>test3</testValue>
+</Root>

@@ -1,0 +1,50 @@
+UniProt	O00050	O00050		GO:0003676	GOA:interpro	IEA		F	Transposase		protein	taxon:105351	20041101	UniProt
+UniProt	O00050	O00050		GO:0003677	GOA:interpro	IEA		F	Transposase		protein	taxon:105351	20041101	UniProt
+UniProt	O00050	O00050		GO:0005634	GOA:interpro	IEA		C	Transposase		protein	taxon:105351	20041101	UniProt
+UniProt	O00052	O00052		GO:0005198	GOA:interpro	IEA		F	Beta-tubulin (Fragment)		protein	taxon:56679	20041101	UniProt
+UniProt	O00052	O00052		GO:0005525	GOA:spkw	IEA		F	Beta-tubulin (Fragment)		protein	taxon:56679	20041101	UniProt
+UniProt	O00052	O00052		GO:0005874	GOA:interpro	IEA		C	Beta-tubulin (Fragment)		protein	taxon:56679	20041101	UniProt
+UniProt	O00052	O00052		GO:0007018	GOA:interpro	IEA		P	Beta-tubulin (Fragment)		protein	taxon:56679	20041101	UniProt
+UniProt	O00053	O00053		GO:0005524	GOA:interpro	IEA		F	PrBiP precursor		protein	taxon:38082	20041101	UniProt
+UniProt	O00053	O00053		GO:0005524	GOA:spkw	IEA		F	PrBiP precursor		protein	taxon:38082	20041101	UniProt
+UniProt	O00056	O00056		GO:0004553	GOA:interpro	IEA		F	Endo-inulinase precursor		protein	taxon:28575	20041101	UniProt
+UniProt	O00056	O00056		GO:0005975	GOA:interpro	IEA		P	Endo-inulinase precursor		protein	taxon:28575	20041101	UniProt
+UniProt	O00056	O00056		GO:0005975	GOA:spkw	IEA		P	Endo-inulinase precursor		protein	taxon:28575	20041101	UniProt
+UniProt	O00056	O00056		GO:0016787	GOA:spkw	IEA		F	Endo-inulinase precursor		protein	taxon:28575	20041101	UniProt
+UniProt	O00056	O00056		GO:0016798	GOA:spkw	IEA		F	Endo-inulinase precursor		protein	taxon:28575	20041101	UniProt
+UniProt	O00057	NMT1_UROFA		GO:0009228	GOA:spkw	IEA		P	NMT1 protein homolog		protein	taxon:55588	20041101	UniProt
+UniProt	O00058	MTDH_UROFA		GO:0008152	GOA:interpro	IEA		P	Probable NADP-dependent mannitol dehydrogenase		protein	taxon:55588	20041101	UniProt
+UniProt	O00058	MTDH_UROFA		GO:0016491	GOA:interpro	IEA		F	Probable NADP-dependent mannitol dehydrogenase		protein	taxon:55588	20041101	UniProt
+UniProt	O00058	MTDH_UROFA		GO:0016491	GOA:spkw	IEA		F	Probable NADP-dependent mannitol dehydrogenase		protein	taxon:55588	20041101	UniProt
+UniProt	O00058	MTDH_UROFA		GO:0050085	GOA:spec	IEA		F	Probable NADP-dependent mannitol dehydrogenase		protein	taxon:55588	20041101	UniProt
+UniProt	O00060	CYPH_UROFA		GO:0003755	GOA:spec	IEA		F	Peptidyl-prolyl cis-trans isomerase		protein	taxon:55588	20041101	UniProt
+UniProt	O00060	CYPH_UROFA		GO:0003755	GOA:spkw	IEA		F	Peptidyl-prolyl cis-trans isomerase		protein	taxon:55588	20041101	UniProt
+UniProt	O00060	CYPH_UROFA		GO:0006457	GOA:interpro	IEA		P	Peptidyl-prolyl cis-trans isomerase		protein	taxon:55588	20041101	UniProt
+UniProt	O00060	CYPH_UROFA		GO:0006457	GOA:spkw	IEA		P	Peptidyl-prolyl cis-trans isomerase		protein	taxon:55588	20041101	UniProt
+UniProt	O00060	CYPH_UROFA		GO:0016853	GOA:spkw	IEA		F	Peptidyl-prolyl cis-trans isomerase		protein	taxon:55588	20041101	UniProt
+UniProt	O00061	CP67_UROFA		GO:0004497	GOA:interpro	IEA		F	Cytochrome P450 67 (Fragment)		protein	taxon:55588	20041101	UniProt
+UniProt	O00061	CP67_UROFA		GO:0004497	GOA:spkw	IEA		F	Cytochrome P450 67 (Fragment)		protein	taxon:55588	20041101	UniProt
+UniProt	O00061	CP67_UROFA		GO:0006118	GOA:interpro	IEA		P	Cytochrome P450 67 (Fragment)		protein	taxon:55588	20041101	UniProt
+UniProt	O00061	CP67_UROFA		GO:0016491	GOA:spkw	IEA		F	Cytochrome P450 67 (Fragment)		protein	taxon:55588	20041101	UniProt
+UniProt	O00062	O00062		GO:0005279	GOA:interpro	IEA		F	Putative permease		protein	taxon:55588	20041101	UniProt
+UniProt	O00062	O00062		GO:0006810	GOA:interpro	IEA		P	Putative permease		protein	taxon:55588	20041101	UniProt
+UniProt	O00062	O00062		GO:0006810	GOA:spkw	IEA		P	Putative permease		protein	taxon:55588	20041101	UniProt
+UniProt	O00062	O00062		GO:0006865	GOA:interpro	IEA		P	Putative permease		protein	taxon:55588	20041101	UniProt
+UniProt	O00062	O00062		GO:0016020	GOA:interpro	IEA		C	Putative permease		protein	taxon:55588	20041101	UniProt
+UniProt	O00062	O00062		GO:0016021	GOA:spkw	IEA		C	Putative permease		protein	taxon:55588	20041101	UniProt
+UniProt	O00075	O00075		GO:0005198	GOA:interpro	IEA		F	Beta-tubulin (Fragment)		protein	taxon:56679	20041101	UniProt
+UniProt	O00075	O00075		GO:0005525	GOA:spkw	IEA		F	Beta-tubulin (Fragment)		protein	taxon:56679	20041101	UniProt
+UniProt	O00075	O00075		GO:0005874	GOA:interpro	IEA		C	Beta-tubulin (Fragment)		protein	taxon:56679	20041101	UniProt
+UniProt	O00075	O00075		GO:0007018	GOA:interpro	IEA		P	Beta-tubulin (Fragment)		protein	taxon:56679	20041101	UniProt
+UniProt	O00082	O00082		GO:0004553	GOA:interpro	IEA		F	Cellulose 1,4-beta-cellobiosidase precursor		protein	taxon:5111	20041101	UniProt
+UniProt	O00082	O00082		GO:0005975	GOA:interpro	IEA		P	Cellulose 1,4-beta-cellobiosidase precursor		protein	taxon:5111	20041101	UniProt
+UniProt	O00082	O00082		GO:0005975	GOA:spkw	IEA		P	Cellulose 1,4-beta-cellobiosidase precursor		protein	taxon:5111	20041101	UniProt
+UniProt	O00082	O00082		GO:0016162	GOA:spec	IEA		F	Cellulose 1,4-beta-cellobiosidase precursor		protein	taxon:5111	20041101	UniProt
+UniProt	O00082	O00082		GO:0016787	GOA:spkw	IEA		F	Cellulose 1,4-beta-cellobiosidase precursor		protein	taxon:5111	20041101	UniProt
+UniProt	O00082	O00082		GO:0016798	GOA:spkw	IEA		F	Cellulose 1,4-beta-cellobiosidase precursor		protein	taxon:5111	20041101	UniProt
+UniProt	O00083	O00083		GO:0004190	GOA:interpro	IEA		F	Extracellular aspartic proteinase precursor		protein	taxon:58291	20041101	UniProt
+UniProt	O00083	O00083		GO:0004190	GOA:spkw	IEA		F	Extracellular aspartic proteinase precursor		protein	taxon:58291	20041101	UniProt
+UniProt	O00083	O00083		GO:0004194	GOA:interpro	IEA		F	Extracellular aspartic proteinase precursor		protein	taxon:58291	20041101	UniProt
+UniProt	O00083	O00083		GO:0006508	GOA:interpro	IEA		P	Extracellular aspartic proteinase precursor		protein	taxon:58291	20041101	UniProt
+UniProt	O00083	O00083		GO:0008233	GOA:spkw	IEA		F	Extracellular aspartic proteinase precursor		protein	taxon:58291	20041101	UniProt
+UniProt	O00083	O00083		GO:0016787	GOA:spkw	IEA		F	Extracellular aspartic proteinase precursor		protein	taxon:58291	20041101	UniProt

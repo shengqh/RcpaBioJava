@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+	<class name="cn.ac.rcpa.bio.database.gene.Gene2go" table="GENE2GO"
+		lazy="false">
+		<id name="id" type="java.lang.Long" column="ID">
+			
+			<generator class="native"/>
+		</id>
+		<property name="evidence" type="java.lang.String" column="EVIDENCE"
+			length="4"/>
+		<property name="geneId" type="int" column="GENE_ID" not-null="true"
+			length="10" index="gg_gene_index"/>
+		<property name="goDescription" type="java.lang.String"
+			column="GO_DESCRIPTION"/>
+		<property name="goId" type="java.lang.String" column="GO_ID" length="15"
+			index="gg_go_index"/>
+		<property name="goQualifier" type="java.lang.String" column="GO_QUALIFIER"
+			length="10"/>
+		<property name="pipeSeparatedListOfPubmedId" type="java.lang.String"
+			column="PIPE_SEPARATED_LIST_OF_PUBMED_ID"/>
+		<property name="taxId" type="int" column="TAX_ID" not-null="true" length="10"
+			index="gg_taxonomy_index"/>
+	</class>
+</hibernate-mapping>

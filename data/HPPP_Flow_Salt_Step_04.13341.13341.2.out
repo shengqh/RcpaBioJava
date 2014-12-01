@@ -1,0 +1,57 @@
+
+ HPPP_Flow_Salt_Step_04.13341.13341.2.out
+ TurboSEQUEST - PVM Slave v.27 (rev. 12), (c) 1999-2004
+ Molecular Biotechnology, Univ. of Washington, J.Eng/S.Morgan/J.Yates
+ Licensed to ThermoFinnigan Corp.
+ 07/21/2005, 02:33 PM, 6.06 sec. on dell04
+ (M+H)+ mass = 2170.3900 ~ 3.0000 (+2), fragment tol = 0.0000 , AVG/MONO
+ total inten = 7085.1, lowest Sp = 78.7, # matched peptides = 18691
+ # amino acids = 46021504, # proteins = 100414, /database/ipi.HUMAN.v3.07.REVERSED.fasta
+ ion series nABY ABCDVWXYZ: 0 1 1 0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0
+ display top 10/5, ion % = 0.0, CODE = 101010
+ C=160.1652 Enzyme:Trypsin (2)
+
+  #   Rank/Sp      Id#     (M+H)+   deltCn   XCorr    Sp     Ions  Reference                                                                           Peptide
+ ---  --------  --------  --------  ------  ------   -----  -----  ---------                                                                           -------
+  1.   1 / 81          0 2171.3176  0.0000  2.2761   112.6   9/38  IPI:IPI00299786.1|TREMBL:Q9NRE4|ENSEMBL:ENSP00000321649                             R.ESQGQVGGLEREXRGVQDGR.H
+  2.   2 / 14          0 2171.4837  0.2173  1.7814   169.4  11/42  REVERSED_8579                                                                   +5  R.AEVATISDGGRAGQIIVGKVTK.P
+                       0  REVERSED_18678
+                       0  REVERSED_22968
+                       0  REVERSED_22969
+                       0  REVERSED_26469
+                       0  REVERSED_31569
+  3.   3 / 41          0 2167.4471  0.2259  1.7619   130.0  10/36  IPI:IPI00394984.3|SWISS-PROT:Q96EV8-2|TREMBL:Q5THY2;Q5THY4|REFSEQ_NP:NP_898861|     R.VDKLALAEPGQYRCHSPPK.V
+  4.   4 /  1          0 2170.6121  0.2433  1.7224   275.3  12/36  REVERSED_18997                                                                  +6  K.EKCLLVLELDLDGKLLLGK.A
+                       0  REVERSED_22617
+                       0  REVERSED_22618
+                       0  REVERSED_34468
+                       0  REVERSED_34821
+                       0  REVERSED_49312
+                       0  REVERSED_49501
+  5.   5 / 15          0 2170.4543  0.2605  1.6831   166.0  11/38  REVERSED_7794                                                                       K.YTTVPHNIEAVSITANLIGR.G
+  6.   6 / 19          0 2170.3631  0.2629  1.6776   155.9  10/38  REVERSED_6448                                                                       K.DANEALNEEELVELAAIAVR.C
+  7.   7 /111          0 2168.6328  0.2701  1.6613   104.3   9/38  REVERSED_15139                                                                  +1  K.MDLPGIITINNLRAKGIVTK.S
+                       0  REVERSED_30562
+  8.   8 / 17          0 2168.5230  0.2806  1.6373   162.6  11/36  REVERSED_5586                                                                   +4  K.ERGALSLQKLAELEELLVR.E
+                       0  REVERSED_19778
+                       0  REVERSED_19779
+                       0  REVERSED_19780
+                       0  REVERSED_19781
+  9.   9 / 47          0 2172.4042  0.2904  1.6151   127.9   9/36  REVERSED_16569                                                                  +3  K.DQFGSERFMSEVVEALQAK.S
+                       0  REVERSED_22782
+                       0  REVERSED_37069
+                       0  REVERSED_49448
+ 10.  10 / 24          0 2168.5663  0.2987  1.5963   147.5  10/38  IPI:IPI00217718.1|SWISS-PROT:Q9BYW1-2|ENSEMBL:ENSP00000342542                   +4  K.SLLVNNIFVVSAAILFGFSR.K
+                       0  IPI:IPI00292092.6|TREMBL:Q6ICJ5;Q8
+                       0  IPI:IPI00440679.1|TREMBL:Q6P4C1 Ta
+                       0  IPI:IPI00477596.1|SWISS-PROT:Q9BYW
+                       0  IPI:IPI00556052.1|TREMBL:Q59G08 Ta
+
+  1.          0  IPI:IPI00299786.1|TREMBL:Q9NRE4|ENSEMBL:ENSP00000321649 Tax_Id=9606 Endozepine
+  2.          0  REVERSED_8579 
+  3.          0  IPI:IPI00394984.3|SWISS-PROT:Q96EV8-2|TREMBL:Q5THY2;Q5THY4|REFSEQ_NP:NP_898861
+  4.          0  REVERSED_18997 
+  5.          0  REVERSED_7794 
+
+
+

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by long (ORiON) -->
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="ProteinEntrySet">
+		<xs:annotation>
+			<xs:documentation>one or more proteinentry</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ProteinEntry" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>IPI or SwissProt Entry</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="entry_name" type="xs:string"/>
+							<xs:element name="data_class" type="xs:string" minOccurs="0"/>
+							<xs:element name="molecule_type" type="xs:string" minOccurs="0"/>
+							<xs:element name="sequence_length" type="xs:int" minOccurs="0"/>
+							<xs:element name="create" type="xs:string" minOccurs="0"/>
+							<xs:element name="sequence_update" type="xs:string" minOccurs="0"/>
+							<xs:element name="annotation_update" type="xs:string" minOccurs="0"/>
+							<xs:element name="description" type="xs:string" minOccurs="0"/>
+							<xs:element name="gene_name" type="xs:string" minOccurs="0"/>
+							<xs:element name="organism_species" type="xs:string" minOccurs="0"/>
+							<xs:element name="organelle" type="xs:string" minOccurs="0"/>
+							<xs:element name="organism_classification" type="xs:string" minOccurs="0"/>
+							<xs:element name="taxonomy_id" type="xs:string" minOccurs="0"/>
+							<xs:element name="keyword" type="xs:string" minOccurs="0"/>
+							<xs:element name="mw" type="xs:int" minOccurs="0"/>
+							<xs:element name="crc" type="xs:string" minOccurs="0"/>
+							<xs:element name="sequence" type="xs:string" minOccurs="0"/>
+							<xs:element name="ac_number" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="Free_comment" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="cc_topic" type="xs:string" minOccurs="0"/>
+										<xs:element name="cc_details" type="xs:string" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Reference" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="num" type="xs:int" minOccurs="0"/>
+										<xs:element name="position" type="xs:string" minOccurs="0"/>
+										<xs:element name="comment" type="xs:string" minOccurs="0"/>
+										<xs:element name="medline_num" type="xs:int" minOccurs="0"/>
+										<xs:element name="pubmed_num" type="xs:int" minOccurs="0"/>
+										<xs:element name="doi_num" type="xs:string" minOccurs="0"/>
+										<xs:element name="author" type="xs:string" minOccurs="0"/>
+										<xs:element name="title" type="xs:string" minOccurs="0"/>
+										<xs:element name="location" type="xs:string" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Db_reference" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="db" type="xs:string"/>
+										<xs:element name="primary_identifier" type="xs:string" minOccurs="0"/>
+										<xs:element name="secondary_identifier" type="xs:string" minOccurs="0"/>
+										<xs:element name="tertiary_identifier" type="xs:string" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Feature_table" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="key_name" type="xs:string"/>
+										<xs:element name="sequence_from" type="xs:int" minOccurs="0"/>
+										<xs:element name="sequence_to" type="xs:int" minOccurs="0"/>
+										<xs:element name="ft_description" type="xs:string" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+	"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<import resource="applicationContext-base.xml"/>
+	
+	<bean id="annotationDataSource" parent="basePoolDataSource">
+		<property name="alias" value="annotation-sapdb-dbpool"/>
+		<property name="driver" value="com.sap.dbtech.jdbc.DriverSapDB"/>
+		<property name="driverUrl" value="jdbc:sapdb://192.168.88.201/RCPA"/>
+		<property name="user" value="annotation"/>
+		<property name="password" value="annotation"/>
+	</bean>
+	
+	<alias alias="baseAnnotationSessionFactory" name="baseSapdbSessionFactory"/>
+	
+	<import resource="annotation-applicationContext-service.xml"/>
+</beans>
