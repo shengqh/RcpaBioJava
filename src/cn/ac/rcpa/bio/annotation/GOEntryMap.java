@@ -13,7 +13,6 @@ import java.util.Map;
 import java.util.Set;
 
 import org.jdom.Element;
-import org.jdom.JDOMException;
 import org.jdom.Namespace;
 
 import cn.ac.rcpa.utils.RcpaObjectUtils;

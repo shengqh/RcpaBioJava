@@ -11,7 +11,6 @@ import java.util.Map;
 import java.util.Set;
 
 import org.jdom.Element;
-import org.jdom.JDOMException;
 
 import cn.ac.rcpa.utils.XMLFile;
 
