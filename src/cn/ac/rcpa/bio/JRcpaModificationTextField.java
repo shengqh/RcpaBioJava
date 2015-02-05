@@ -24,8 +24,9 @@ public class JRcpaModificationTextField extends JRcpaTextField {
 		Map<Character, Double> result = new HashMap<Character, Double>();
 
 		Pattern pattern = Pattern.compile("(\\S)\\s+([+-0123456789.]+)");
-		Aminoacids aas = Aminoacids.getStableInstance();
-
+		Aminoacids aas = new Aminoacids();
+		aas.initTerminal();
+		
 		Matcher match = pattern.matcher(this.getText());
 		while (match.find()) {
 			char aa = match.group(1).charAt(0);

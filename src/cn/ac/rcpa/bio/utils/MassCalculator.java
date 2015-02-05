@@ -5,8 +5,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.support.ArgumentConvertingMethodInvoker;
-
 import cn.ac.rcpa.bio.aminoacid.Aminoacids;
 import cn.ac.rcpa.bio.proteomics.IonType;
 import cn.ac.rcpa.bio.proteomics.Peak;
@@ -97,11 +95,9 @@ public class MassCalculator {
 
 			if (Aminoacids.getStableInstance().get(i).isVisible()) {
 				if (monoIsotopic) {
-					staticAminoacidMass[i] = Aminoacids.getStableInstance()
-							.get(i).getMonoMass();
+					staticAminoacidMass[i] = Aminoacids.getStableInstance().get(i).getMonoMass();
 				} else {
-					staticAminoacidMass[i] = Aminoacids.getStableInstance()
-							.get(i).getAverageMass();
+					staticAminoacidMass[i] = Aminoacids.getStableInstance().get(i).getAverageMass();
 				}
 			} else {
 				staticAminoacidMass[i] = 0.0;
@@ -124,8 +120,16 @@ public class MassCalculator {
 	}
 
 	private void resetTermMass() {
-		this.cTermMass = Hmass + Omass;
+		resetNTermMass();
+		resetCTermMass();
+	}
+
+	private void resetNTermMass() {
 		this.nTermMass = Hmass;
+	}
+
+	private void resetCTermMass() {
+		this.cTermMass = Hmass + Omass;
 	}
 
 	public MassCalculator(boolean monoIsotopic) {
@@ -135,8 +139,7 @@ public class MassCalculator {
 		resetAminoacids();
 	}
 
-	public MassCalculator(boolean monoIsotopic, double cTermMass,
-			double nTermMass) {
+	public MassCalculator(boolean monoIsotopic, double cTermMass, double nTermMass) {
 		this.monoIsotopic = monoIsotopic;
 
 		resetCHON();
@@ -157,7 +160,13 @@ public class MassCalculator {
 	}
 
 	public void addStaticModification(char aminoacid, double actualMass) {
-		staticAminoacidMass[aminoacid] = actualMass;
+		if (aminoacid == '[') {
+			this.nTermMass = actualMass;
+		} else if (aminoacid == ']') {
+			this.cTermMass = actualMass;
+		} else {
+			staticAminoacidMass[aminoacid] = actualMass;
+		}
 	}
 
 	public void addStaticModifications(Map<Character, Double> map) {
@@ -167,12 +176,14 @@ public class MassCalculator {
 	}
 
 	public void removeStaticModification(char aminoacid) {
-		if (monoIsotopic) {
-			staticAminoacidMass[aminoacid] = Aminoacids.getStableInstance()
-					.get(aminoacid).getMonoMass();
+		if (aminoacid == '[') {
+			resetNTermMass();
+		} else if (aminoacid == ']') {
+			resetCTermMass();
+		} else if (monoIsotopic) {
+			staticAminoacidMass[aminoacid] = Aminoacids.getStableInstance().get(aminoacid).getMonoMass();
 		} else {
-			staticAminoacidMass[aminoacid] = Aminoacids.getStableInstance()
-					.get(aminoacid).getAverageMass();
+			staticAminoacidMass[aminoacid] = Aminoacids.getStableInstance().get(aminoacid).getAverageMass();
 		}
 	}
 
@@ -270,14 +281,10 @@ public class MassCalculator {
 		for (int i = 1; i < sequence.length(); i++) {
 			if (Character.isLetter(sequence.charAt(i))) {
 				if (staticAminoacidMass[sequence.charAt(i)] == 0.0) {
-					throw new SequenceValidateException(
-							"Parameter sequence is invalid : unrecognize aminoacid '"
-									+ sequence.charAt(i) + "' in " + sequence);
+					throw new SequenceValidateException("Parameter sequence is invalid : unrecognize aminoacid '" + sequence.charAt(i) + "' in " + sequence);
 				}
 			} else if (!isDynamicModificationChar(sequence, i)) {
-				throw new SequenceValidateException(
-						"Parameter sequence is invalid : unrecognize aminoacid '"
-								+ sequence.charAt(i) + "' in " + sequence);
+				throw new SequenceValidateException("Parameter sequence is invalid : unrecognize aminoacid '" + sequence.charAt(i) + "' in " + sequence);
 			}
 		}
 	}
@@ -290,10 +297,7 @@ public class MassCalculator {
 		}
 
 		if (!Character.isLetter(c) || !isAminoacidValid(sequence.charAt(0))) {
-			throw new SequenceValidateException(
-					"Parameter sequence is invalid : first char '"
-							+ sequence.charAt(0)
-							+ "' is not a valid amino acid");
+			throw new SequenceValidateException("Parameter sequence is invalid : first char '" + sequence.charAt(0) + "' is not a valid amino acid");
 		}
 	}
 
@@ -303,8 +307,7 @@ public class MassCalculator {
 
 	private void validateSequenceEmpty(String sequence) {
 		if (sequence == null || sequence.length() == 0) {
-			throw new SequenceValidateException(
-					"Parameter sequence cannot be empty!");
+			throw new SequenceValidateException("Parameter sequence cannot be empty!");
 		}
 	}
 
@@ -371,29 +374,24 @@ public class MassCalculator {
 			return dynamicModificationMass[sequence.charAt(index - 1)];
 		}
 
-		throw new IllegalArgumentException("Character "
-				+ sequence.charAt(index)
-				+ " is not a dynamic modification character.");
+		throw new IllegalArgumentException("Character " + sequence.charAt(index) + " is not a dynamic modification character.");
 	}
 
 	public double[] getBSeries(String peptideSeq) {
 		validateSequence(peptideSeq);
 
 		if (isDynamicModificationExists(peptideSeq)) {
-			return getDynamicModifiedBSeries(peptideSeq,
-					getAminoacidCount(peptideSeq) - 1);
+			return getDynamicModifiedBSeries(peptideSeq, getAminoacidCount(peptideSeq) - 1);
 		}
 
-		return getUndynamicModifiedBSeries(peptideSeq,
-				getAminoacidCount(peptideSeq) - 1);
+		return getUndynamicModifiedBSeries(peptideSeq, getAminoacidCount(peptideSeq) - 1);
 	}
 
 	public double[] getFullBSeries(String peptideSeq) {
 		validateSequence(peptideSeq);
 
 		if (isDynamicModificationExists(peptideSeq)) {
-			return getDynamicModifiedBSeries(peptideSeq,
-					getAminoacidCount(peptideSeq));
+			return getDynamicModifiedBSeries(peptideSeq, getAminoacidCount(peptideSeq));
 		}
 		return getUndynamicModifiedBSeries(peptideSeq, peptideSeq.length());
 	}
@@ -417,11 +415,11 @@ public class MassCalculator {
 
 		double mass = nTermMass;
 		int startIndex = 0;
-		if(isDynamicModification(peptideSeq.charAt(0))){
+		if (isDynamicModification(peptideSeq.charAt(0))) {
 			mass += getDynamicModificationCharMass(peptideSeq, 0);
 			startIndex = 1;
 		}
-		
+
 		for (int i = startIndex, j = 0; i < peptideSeq.length();) {
 			mass += staticAminoacidMass[peptideSeq.charAt(i++)];
 			if (isDynamicModificationChar(peptideSeq, i)) {
@@ -440,20 +438,17 @@ public class MassCalculator {
 		validateSequence(peptideSeq);
 
 		if (isDynamicModificationExists()) {
-			return getDynamicModifiedYSeries(peptideSeq,
-					getAminoacidCount(peptideSeq) - 1);
+			return getDynamicModifiedYSeries(peptideSeq, getAminoacidCount(peptideSeq) - 1);
 		}
 
-		return getUndynamicModifiedYSeries(peptideSeq,
-				getAminoacidCount(peptideSeq) - 1);
+		return getUndynamicModifiedYSeries(peptideSeq, getAminoacidCount(peptideSeq) - 1);
 	}
 
 	public double[] getFullYSeries(String peptideSeq) {
 		validateSequence(peptideSeq);
 
 		if (isDynamicModificationExists(peptideSeq)) {
-			return getDynamicModifiedYSeries(peptideSeq,
-					getAminoacidCount(peptideSeq));
+			return getDynamicModifiedYSeries(peptideSeq, getAminoacidCount(peptideSeq));
 		}
 
 		return getUndynamicModifiedYSeries(peptideSeq, peptideSeq.length());
@@ -493,8 +488,7 @@ public class MassCalculator {
 		return result;
 	}
 
-	public <T extends Peak> Map<IonType, List<T>> getSeries(String peptideSeq,
-			IonType[] ionTypes, IAllocator<T> allocator) {
+	public <T extends Peak> Map<IonType, List<T>> getSeries(String peptideSeq, IonType[] ionTypes, IAllocator<T> allocator) {
 		validateSequence(peptideSeq);
 
 		double[] bIons = getBSeries(peptideSeq);
@@ -548,9 +542,7 @@ public class MassCalculator {
 				double[] ions = arrayToArray(yIons, -nh3 - h2o);
 				result.put(ionType, arrayToList(ions, ionType, 1, allocator));
 			} else {
-				throw new IllegalArgumentException(
-						"Don't know how to get fragmentation of "
-								+ ionType.toString());
+				throw new IllegalArgumentException("Don't know how to get fragmentation of " + ionType.toString());
 			}
 		}
 		return result;
@@ -572,8 +564,7 @@ public class MassCalculator {
 		return result;
 	}
 
-	private static <T extends Peak> List<T> arrayToList(double[] ions,
-			IonType ionType, int charge, IAllocator<T> allocator) {
+	private static <T extends Peak> List<T> arrayToList(double[] ions, IonType ionType, int charge, IAllocator<T> allocator) {
 		List<T> result = new ArrayList<T>();
 		for (int i = 0; i < ions.length; i++) {
 			T peak = allocator.allocate();
